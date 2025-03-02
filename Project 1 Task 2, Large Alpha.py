@@ -1,6 +1,5 @@
 # Task 2: Polynomial Regression and Regularization
-# This version uses the more complicated way to create the Ridge and Lasso models
-# This file uses alpha = 100.0 for the Ridge and Lasso models
+# This file uses a large alpha for the Ridge and Lasso models
 
 import numpy as np
 import matplotlib.pyplot as pp
@@ -24,7 +23,7 @@ def generate_quadratic_data(N, var):
 # For this task, we'll only use one noise level
 noise = 20.0
 # And, we'll only use one large alpha value
-large_alpha = 100.0
+large_alpha = 500.0
 
 # Initialize plot
 pp.figure(figsize=(12, 8))
@@ -89,7 +88,7 @@ print(f"  Linear Model MSE = {mse_linear:.4f}")
 print(f"  Quadratic Model MSE = {mse_quadratic:.4f}")
 print(f"  Ridge Regression MSE = {mse_ridge:.4f}")
 print(f"  Lasso Regression MSE = {mse_lasso:.4f}\n")
-    
+
 # Plot data and regression lines
 pp.scatter(X, y, label='Synthetic Data')
 pp.plot(X, linear_model.predict(X), color='red', label='Linear Regression')
